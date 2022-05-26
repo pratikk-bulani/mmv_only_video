@@ -59,7 +59,7 @@ def main(argv):
             continue
 
         video_data = skvideo.io.vread(os.path.join(FLAGS.dataset_folder, path))
-        video_data = (video_data[:32, ...][np.newaxis, ...]).astype(np.float32) / 255.0
+        video_data = (video_data[np.newaxis, ...]).astype(np.float32) / 255.0
         # print(video_data.shape, video_data.dtype) # (1, #frames, H, W, 3) float32
 
         vid_representation_test, _ = forward_apply(images=video_data)
