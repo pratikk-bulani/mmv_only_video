@@ -65,7 +65,7 @@ def main(argv):
         vid_representation_test, _ = forward_apply(images=video_data)
         with open(os.path.join(FLAGS.output_folder, video_name + ".pkl"), "wb") as f:
             pkl.dump(vid_representation_test, f)
-        exit(0)
+        # exit(0)
 
 if __name__ == '__main__':
     app.run(main)
