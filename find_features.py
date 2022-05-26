@@ -63,10 +63,8 @@ def main(argv):
         # print(video_data.shape, video_data.dtype) # (1, #frames, H, W, 3) float32
 
         vid_representation_test, _ = forward_apply(images=video_data)
-        for v in vid_representation_test:
-            print(v)
-        # with open(os.path.join(FLAGS.output_folder, video_name + ".pkl"), "wb") as f:
-        #     pkl.dump(vid_representation_test, f)
+        with open(os.path.join(FLAGS.output_folder, video_name + ".pkl"), "wb") as f:
+            pkl.dump(vid_representation_test, f)
         exit(0)
 
 if __name__ == '__main__':
